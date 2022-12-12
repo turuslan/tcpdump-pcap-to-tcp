@@ -63,7 +63,7 @@ struct Tcp {
       },
     };
     pcpp::RawPacket raw;
-    uint64_t _time;
+    uint64_t _time{};
     while (dev.getNextPacket(raw)) {
       auto time{ms(raw.getPacketTimeStamp())};
       if (_time > time) abort();
